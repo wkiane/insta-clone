@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="submit" name="registrar" class="btn btn-success btn-block" value="Registrar">
+                    <input type="submit" name="registrar" class="btn btn-lg btn-success btn-block" value="Registrar">
                 </div>
                 <div class="col">
                     <a href="<?=BASE_URL;?>/users/login" class="btn btn-lg btn-block btn-light">Entrar</a>

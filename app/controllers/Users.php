@@ -63,8 +63,15 @@
                 }
                 // check if errors are empty
                 if(empty($data['name_err']) && empty($data['email_err']) && empty($data['email2_err']) && empty($data['pass_err']) && empty($data['pass2_err'])) {
-                    // validated
-                    die('SUCCESS');
+                    // hash password
+                    $data['pass'] = password_hash($data['pass'], PASSWORD_DEFAULT);
+                    // register user
+                    if($this->userModel->register($data)) {
+                        flash('register_success', 'Conta criada com sucesso');
+                        redirect('users/login');
+                    } else {
+                        die('Something went wrong');
+                    };
                 } else {
                     $this->loadTemplate('users/register', $data);
                 }

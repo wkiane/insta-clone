@@ -7,7 +7,7 @@
         define('BASE_URL', 'http://localhost/traversy_mvc_projects/mini-instagram');
         define('APP_ROOT', dirname(dirname(__FILE__)));
         // DB Params
-        define('DB_HOST', 'localhost');
+        define('DB_HOST', "localhost");
         define('DB_USER', 'root');
         define('DB_PASS', '');
         define('DB_NAME', 'galeria-de-fotos');

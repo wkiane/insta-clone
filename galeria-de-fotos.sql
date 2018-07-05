@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Jun-2018 às 03:37
+-- Generation Time: 05-Jul-2018 às 02:24
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -86,7 +86,10 @@ INSERT INTO `usuarios` (`id`, `email`, `nome`, `senha`, `create_at`, `descricao`
 (16, 'lorena2018@gmail.com', 'lorena', '81dc9bdb52d04dc20036dbd8313ed055', '2018-06-06 20:02:21', '', 'user.png'),
 (17, 'paulo_abreu@gmail.com', 'paulo abreu sardinha', '81dc9bdb52d04dc20036dbd8313ed055', '2018-06-07 18:35:41', 'Vovô da treta', '70efdf2ec9b086079795c442636b55fb.jpeg'),
 (18, 'joedoe@gmail.com', 'john doe', '81dc9bdb52d04dc20036dbd8313ed055', '2018-06-07 23:13:53', 'Hi, my name is John I\'m from NY and more things about me written here lorem ipsum ipsum.', '6f4922f45568161a8cdf4ad2299f6d23.jpeg'),
-(19, 'fulano@gmail.com', 'fulano', '81dc9bdb52d04dc20036dbd8313ed055', '2018-06-14 01:29:56', '', 'user.png');
+(19, 'fulano@gmail.com', 'fulano', '81dc9bdb52d04dc20036dbd8313ed055', '2018-06-14 01:29:56', '', 'user.png'),
+(21, 'anderson@gmail.com', 'anderson', '$2y$10$3OFQ74/Y82ZKXyUwZ5xEI.O3sNIZUSqj4WArNvd77T1VbTUXyklP6', '2018-06-30 20:21:40', '', 'user.png'),
+(22, 'jorgin@gmail.com', 'jorgin', '$2y$10$cVmYSirZ6001KKIXVBoHJ.zgWcuNYDD/YTvQoIYydcwWipertSaKS', '2018-07-04 21:13:08', '', 'user.png'),
+(23, 'manuel@gmail.com', 'manuel', '$2y$10$vplnPFdh52FZv9qzld2TfOg47Cj3lhb6FBm8IzfmdxePpH7afenH2', '2018-07-04 21:14:21', '', 'user.png');
 
 --
 -- Indexes for dumped tables
@@ -118,7 +121,7 @@ ALTER TABLE `fotos`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
