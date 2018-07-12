@@ -9,7 +9,7 @@
             </div>
 
             <div class="form-group">
-                <input type="password" name="pass" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" placeholder="Sua senha">
+                <input type="password" name="pass" class="form-control <?php echo (!empty($pass_err)) ? 'is-invalid' : ''; ?>" placeholder="Sua senha">
                 <span class="invalid-feedback"><?=$pass_err?></span>
             </div>
 

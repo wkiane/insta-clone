@@ -114,26 +114,44 @@
                 ];
                  // validate email
                 if(empty($data['email'])) {
-                    $data['email_err'] = 'Please enter email';
+                    $data['email_err'] = 'Por favor preencha o campo email';
                 }
                 // validate password
                 if(empty($data['pass'])) {
-                    $data['pass_err'] = 'Please fill the password field';
+                    $data['pass_err'] = 'Por favor preencha o campo senha';
                 } elseif(strlen($data['pass']) < 6 ) {
-                    $data['pass_err'] = 'The password must be at least 6 characters long';
+                    $data['pass_err'] = 'Sua senha deve ter pelo menos 6 caracteres';
                 }
                 // validate comfirm password
                 if(empty($data['pass2'])) {
-                    $data['pass2_err'] = 'Please comfirm your password';
+                    $data['pass2_err'] = 'Por favor comfirme sua senha';
                 } else {
                     if($data['pass'] != $data['pass2']) {
-                        $data['pass2_err'] = 'Passwords do not match';
+                        $data['pass2_err'] = 'As duas senhas não batem';
                     }
                 }
+
+                // check for user/email
+                if($this->userModel->findUserByEmail($data['email'])) {
+                    // user found
+                } else {
+                    // user not found
+                    $data['email_err'] = 'Email não encontrado';
+                }
+
                 // check if errors are empty
-                if(empty($data['email_err'])&& empty($data['pass_err'])) {
+                if(empty($data['email_err']) && empty($data['pass_err'])) {
                     // validated
-                    die('SUCCESS');
+                    // check and set logged in user
+                    $loggedInUser = $this->userModel->login($data['email'], $data['pass']);
+
+                    if($loggedInUser) {
+                        // create session
+                        die('SUCCESS');
+                    } else {
+                        $data['pass_err'] = 'Senha incorreta';
+                        $this->loadTemplate('users/login', $data);
+                    }
                 } else {
                     $this->loadTemplate('users/login', $data);
                 }
