@@ -25,7 +25,7 @@
             $row = $this->db->single();
 
             // check the two passwords
-            $hashed_password = $row['senha'];
+            $hashed_password = $row->senha;
             if(password_verify($password, $hashed_password)) {
                 return $row;
             } else {

@@ -64,13 +64,13 @@
         // get results set as array of ojects
         public function resultSet() {
             $this->execute();
-            return $this->stmt->fetchAll();
+            return $this->stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
         // get one result
         public function single() {
             $this->execute();
-            return $this->stmt->fetch();
+            return $this->stmt->fetch(PDO::FETCH_OBJ);
         }
 
         // get row count

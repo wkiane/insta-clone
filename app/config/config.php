@@ -6,6 +6,7 @@
     if($enviroment == 'development') {
         define('BASE_URL', 'http://localhost/traversy_mvc_projects/mini-instagram');
         define('APP_ROOT', dirname(dirname(__FILE__)));
+        define('ROOT', dirname(dirname(dirname(__FILE__))));
         // DB Params
         define('DB_HOST', "localhost");
         define('DB_USER', 'root');

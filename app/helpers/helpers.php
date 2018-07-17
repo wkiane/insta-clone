@@ -34,3 +34,23 @@
             };
         };
     };
+
+
+    // loads a controller
+    function loadController($controller) {
+        require_once APP_ROOT.'/controllers/'.$controller.'.php';
+    }
+
+    // load model
+    function loadModel($model) {
+        require_once APP_ROOT.'/models/'.$model.'.php';
+    }
+
+    // check if is logged
+    function isLoggedIn() {
+        if(isset($_SESSION['user_id'])) {
+            return true;
+        } else {
+            return false;
+        }
+    }

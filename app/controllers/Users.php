@@ -147,7 +147,7 @@
 
                     if($loggedInUser) {
                         // create session
-                        die('SUCCESS');
+                        $this->createUserSession($loggedInUser);
                     } else {
                         $data['pass_err'] = 'Senha incorreta';
                         $this->loadTemplate('users/login', $data);
@@ -169,6 +169,23 @@
                 // load view
                 $this->loadTemplate('users/login', $data);
             }
-            
+        }
+
+        public function createUserSession($user) {
+            $_SESSION['user_id'] = $user->id;
+            $_SESSION['user_nome'] = $user->nome;
+            $_SESSION['user_email'] = $user->email;
+            $_SESSION['user_create_at'] = $user->create_at;
+
+            $_SESSION['user_descricao'] = $user->descricao;
+            $_SESSION['user_foto'] = $user->url_foto;
+
+            redirect('');
+        }
+
+        public function logout() {
+            session_unset();
+            session_destroy();
+            redirect('users/login');
         }
     }
